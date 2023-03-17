@@ -7,9 +7,9 @@ type Params = {
   units: string
 }
 
-const fetchWeather = async ({queryKey}: QueryFunctionContext<[string, { lat: string, lon: string }]>) => {
+const fetchForecast = async ({ queryKey }: QueryFunctionContext<[string, {lat: string, lon: string}]>) => {
   const {lat, lon} = queryKey[1];
-  const url = new URL(import.meta.env.VITE_OPEN_WEATHER_API_URL);
+  const url = new URL(import.meta.env.VITE_OPEN_FORECAST_API_URL);
   const params: Params = {
     appid: import.meta.env.VITE_OPEN_WEATHER_API_KEY,
     lat,
@@ -20,10 +20,10 @@ const fetchWeather = async ({queryKey}: QueryFunctionContext<[string, { lat: str
   const apiRes = await fetch(url);
 
   if (!apiRes.ok) {
-    throw new Error(`weather fetch not ok`);
+    throw new Error(`forecast fetch not ok`);
   }
 
   return apiRes.json();
 };
 
-export default fetchWeather;
+export default fetchForecast;

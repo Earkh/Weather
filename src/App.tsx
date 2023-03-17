@@ -1,5 +1,6 @@
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import CurrentWeather from './weather/CurrentWeather';
+import CurrentWeather from "./weather/CurrentWather/CurrentWeather";
+import Forecast from "./weather/Forecast/Forecast";
 
 function App() {
   const queryClient = new QueryClient({
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <CurrentWeather></CurrentWeather>
+      <CurrentWeather />
+      <Forecast />
     </QueryClientProvider>
   )
 }
