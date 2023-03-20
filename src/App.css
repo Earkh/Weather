@@ -9,4 +9,8 @@
         font-family: 'Sono', sans-serif;
         @apply bg-slate-800 text-white
     }
+
+    input[type=text] {
+        @apply bg-gray-700 border border-gray-600 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500
+    }
 }

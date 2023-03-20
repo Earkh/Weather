@@ -1,14 +1,16 @@
-import {QueryFunctionContext} from "@tanstack/react-query";
+import { QueryFunctionContext } from '@tanstack/react-query';
 
 type Params = {
-  appid: string,
-  lat: string,
-  lon: string,
-  units: string
-}
+  appid: string;
+  lat: string;
+  lon: string;
+  units: string;
+};
 
-const fetchWeather = async ({queryKey}: QueryFunctionContext<[string, { lat: string, lon: string }]>) => {
-  const {lat, lon} = queryKey[1];
+const fetchWeather = async ({
+  queryKey
+}: QueryFunctionContext<[string, { lat: string; lon: string }]>) => {
+  const { lat, lon } = queryKey[1];
   const url = new URL(import.meta.env.VITE_OPEN_WEATHER_API_URL);
   const params: Params = {
     appid: import.meta.env.VITE_OPEN_WEATHER_API_KEY,

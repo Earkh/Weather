@@ -1,4 +1,4 @@
-import {FC} from "react";
+import { FC } from 'react';
 import cloudsd from '../../assets/icons/cloudsd.png';
 import cloudsn from '../../assets/icons/cloudsn.png';
 import clearskyd from '../../assets/icons/clearskyd.png';
@@ -21,30 +21,29 @@ interface Props {
   description: string;
 }
 
-const CurrentWeatherIcon: FC<Props> = ({imageName, description}) => {
-
+const CurrentWeatherIcon: FC<Props> = ({ imageName, description }) => {
   const images: { [key: string]: string } = {
-    'cloudsd': cloudsd,
-    'cloudsn': cloudsn,
-    'cleard': clearskyd,
-    'clearn': clearskyn,
-    'fewcloudsd': fewcloudsd,
-    'fewcloudsn': fewcloudsn,
-    'mistd': mistd,
-    'mistn': mistn,
-    'raind': raind,
-    'rainn': rainn,
-    'drizzled': drizzled,
-    'drizzlen': drizzlen,
-    'snowd': snowd,
-    'snown': snown,
-    'thunderstormd': thunderstormd,
-    'thunderstormn': thunderstormn,
-  }
+    cloudsd: cloudsd,
+    cloudsn: cloudsn,
+    cleard: clearskyd,
+    clearn: clearskyn,
+    fewcloudsd: fewcloudsd,
+    fewcloudsn: fewcloudsn,
+    mistd: mistd,
+    mistn: mistn,
+    raind: raind,
+    rainn: rainn,
+    drizzled: drizzled,
+    drizzlen: drizzlen,
+    snowd: snowd,
+    snown: snown,
+    thunderstormd: thunderstormd,
+    thunderstormn: thunderstormn
+  };
 
   return (
     <div className="self-center">
-      <img src={images[imageName]} alt={description} className="mb-6 mx-auto" />
+      <img src={images[imageName]} alt={description} className="mx-auto mb-6" />
       <p className="text-center">{description}</p>
     </div>
   );
